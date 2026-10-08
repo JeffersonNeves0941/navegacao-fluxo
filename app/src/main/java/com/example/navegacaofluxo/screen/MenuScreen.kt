@@ -16,13 +16,17 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 
-@Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun menuScreen (modifier: Modifier = Modifier ) {
+fun menuScreen(
+    modifier: Modifier = Modifier,
+    navController: NavController
+) {
     Box(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .fillMaxSize()
             .background(Color(0xFF2C4EC7))
             .padding(32.dp)
     ) {
@@ -33,12 +37,15 @@ fun menuScreen (modifier: Modifier = Modifier ) {
             color = Color.White
         )
 
+
         Column(
             modifier = Modifier.align(Alignment.Center),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Button(
-                onClick = {},
+                onClick = {
+                    navController.navigate("perfil/Jota-Max/21")
+                },
                 colors = ButtonDefaults.buttonColors(
                     Color.White
                 )
@@ -50,7 +57,9 @@ fun menuScreen (modifier: Modifier = Modifier ) {
                 )
             }
             Button(
-                onClick = {},
+                onClick = {
+                    navController.navigate("Pedido?numeroPedido=1234")
+                },
                 colors = ButtonDefaults.buttonColors(
                     Color.White
                 )
@@ -62,7 +71,9 @@ fun menuScreen (modifier: Modifier = Modifier ) {
                 )
             }
             Button(
-                onClick = {},
+                onClick = {
+                    navController.navigate("Login")
+                },
                 colors = ButtonDefaults.buttonColors(
                     Color.White
                 )
